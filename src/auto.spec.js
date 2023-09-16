@@ -11,6 +11,11 @@ describe("Auto gira a la izquierda",()=>{
     auto.ejecutar("I");
     expect(auto.posicionActual()).toEqual("0,0S");
   });
+  it("Gira a la Izquierda desde el Sur",()=>{
+    let auto = new Auto(0, 0, "S");
+    auto.ejecutar("I");
+    expect(auto.posicionActual()).toEqual("0,0E");
+  });
 
 })
 
@@ -27,6 +32,9 @@ class Auto{
     }
     else if (this.direccion === "N"){
       this.direccion ="O";
+    }
+    else if (this.direccion === "S"){
+      this.direccion ="E";
     }
 
 
