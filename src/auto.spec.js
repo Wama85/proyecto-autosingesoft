@@ -1,4 +1,4 @@
-import sumar from "./sumador.js";
+
 
 describe("Auto gira a la izquierda",()=>{
   it("Gira a la Izquierda desde el norte",()=>{
@@ -15,6 +15,11 @@ describe("Auto gira a la izquierda",()=>{
     let auto = new Auto(0, 0, "S");
     auto.ejecutar("I");
     expect(auto.posicionActual()).toEqual("0,0E");
+  });
+  it("Gira a la Izquierda desde el Este",()=>{
+    let auto = new Auto(0, 0, "E");
+    auto.ejecutar("I");
+    expect(auto.posicionActual()).toEqual("0,0N");
   });
 
 })
@@ -35,6 +40,9 @@ class Auto{
     }
     else if (this.direccion === "S"){
       this.direccion ="E";
+    }
+    else if (this.direccion === "E"){
+      this.direccion ="N";
     }
 
 
