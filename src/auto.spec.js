@@ -24,5 +24,11 @@ describe("Auto gira a la izquierda",()=>{
   });
 
 })
-
+describe("Auto Gira a la derecha",()=>{
+it("Gira a la derecha desde el Norte",()=>{
+let auto=new Auto(0,0,"N");
+auto.ejecutar("D");
+expect(auto.posicionActual()).toEqual("0,0E")
+});
+});
 
