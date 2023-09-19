@@ -1,4 +1,5 @@
 
+import Auto from "./auto";
 
 describe("Auto gira a la izquierda",()=>{
   it("Gira a la Izquierda desde el norte",()=>{
@@ -24,33 +25,4 @@ describe("Auto gira a la izquierda",()=>{
 
 })
 
-class Auto{
-  constructor(coordX,coordY,direccion){
-    this.coordX=coordX;
-    this.coordY=coordY;
-    this.direccion=direccion;
-  }
 
-  ejecutar(comando){
-    if(this.direccion ==="O"){
-      this.direccion="S";
-    }
-    else if (this.direccion === "N"){
-      this.direccion ="O";
-    }
-    else if (this.direccion === "S"){
-      this.direccion ="E";
-    }
-    else if (this.direccion === "E"){
-      this.direccion ="N";
-    }
-
-
-  }
-  posicionActual(){
-    let posicion=this.coordX + "," +this.coordY +this.direccion;
-    return posicion;
-
-    
-  }
-}
