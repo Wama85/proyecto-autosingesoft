@@ -3,24 +3,16 @@ class Auto{
       this.coordX=coordX;
       this.coordY=coordY;
       this.direccion=direccion;
+      this.girosIzquierda= new Map();
+      this.girosIzquierda.set("O","S");
+      this.girosIzquierda.set("N","O");
+      this.girosIzquierda.set("S","E");
+      this.girosIzquierda.set("E","N");
     }
   
     ejecutar(comando){
-        switch(this.direccion){
-            case "O":
-                this.direccion="S";
-                break;
-            case "N":
-                this.direccion="O";
-                break;
-            case "S":
-                this.direccion="E";
-                break;
-            case "E":
-                this.direccion="N";
-                break;
-        }
-  
+        this.direccion=this.girosIzquierda.get(this.direccion)
+     
   
     }
     posicionActual(){
